@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :account do
-    email "MyString"
-    balance 1.5
-    currency "MyString"
-    name "MyString"
+    name Faker::Name.name
+    email Faker::Internet.email
+    balance Faker::Number.decimal(2).to_f
+    currency ["rub", "$"].sample
   end
 end
