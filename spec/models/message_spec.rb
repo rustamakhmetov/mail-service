@@ -7,7 +7,7 @@ RSpec.describe Message, type: :model do
 
   describe "#make" do
     let!(:account) { create(:account) }
-    let(:message) { Message.new(title: "Message1", text: text)}
+    let(:message) { create(:message, title: "Message1", text: text)}
 
     describe "with valid attributes" do
       let!(:text) { "Здравствуйте, {{name}}. Ваш баланс: {{balance}}{{currency}}" }
