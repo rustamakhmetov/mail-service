@@ -1,24 +1,31 @@
-# README
+# Пример сервиса по созданию шаблонов писем и их отправке на Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  - Реализован слой моделей: Account, Message.
+  - В качестве шаблонизатора для писем использован 'slim'
 
-Things you may want to cover:
+### Установка
 
-* Ruby version
+  - пример конфигурации бд (config/database.yml.sample)
 
-* System dependencies
+```sh
+$ bundle install
+$ rake db:create
+$ rake db:migrate
+```
 
-* Configuration
+  - Создание по одному экземпляру Message и Account
 
-* Database creation
+```sh
+$ rake db:seed
+```
 
-* Database initialization
+### Запуск тестов
 
-* How to run the test suite
+```sh
+$ rspec spec/
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Отправка тестового письма
+```sh
+$ rake send_email
+```
